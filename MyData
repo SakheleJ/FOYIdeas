@@ -1,0 +1,60 @@
+{
+  "users": [
+    {
+      "UserID": 1,
+      "name": "admin",
+      "email": "admin@foy.co.za",
+      "password": "admin",
+      "role": "admin"
+    },
+    {
+      "UserID": 2,
+      "name": "Sakhele",
+      "email": "Sakhele@gmail.com",
+      "password": "1234",
+      "role": "Admin"
+    }
+  ],
+  "Presbytery": [
+    {
+      "PresbyteryID": 1,
+      "name": "Amathole"
+    },
+    {
+      "PresbyteryID": 2,
+      "name": "Central Cape"
+    }
+  ],
+    "Congregation": [
+    {
+      "CongregationID": 1,
+      "PresbyteryID": 1,
+      "name": "AmatholeC1"
+    },
+    {
+      "CongregationID": 2,
+      "PresbyteryID": 1,
+      "name": "AmatholeC2"
+    },
+    {
+      "CongregationID": 3,
+      "PresbyteryID": 1,
+      "name": "AmatholeC3"
+    },
+    {
+      "CongregationID": 4,
+      "PresbyteryID": 2,
+      "name": "Central CapeC1"
+    },
+    {
+      "CongregationID": 5,
+      "PresbyteryID": 2,
+      "name": "Central CapeC2"
+    },
+    {
+      "CongregationID": 6,
+      "PresbyteryID": 2,
+      "name": "Central CapeC3"
+    }
+  ]
+}

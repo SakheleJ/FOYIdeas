@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UPFOY Dashboard</title>
+  <link rel="icon" type="image/png" href="images/upfoy-logo.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header>
+    <h2>Dashboard</h2>
+    <div>
+      <span id="welcome"></span>
+      <span class="divider"></span>
+      <button class="buttonRegister" onclick="showForm('register-presbytery-form')">Register Presbytery</button>
+      <button class="buttonRegister" onclick="showForm('register-form')">Register User</button>
+      <button class="buttonLogout" onclick="logout()">Logout</button>
+    </div>
+  </header>
+  <div class="container">
+    <h2>Presbytery Selection</h2>
+    <label for="presbytery-select">Select a Presbytery:</label>
+    <select id="presbytery-select">
+      <option value="">-- Select Presbytery --</option>
+    </select>
+
+    <p id="selected-presbytery"></p>
+
+    <h3>Congregations</h3>
+    <table id="congregation-table">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Name</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Congregation rows will be inserted here -->
+      </tbody>
+    </table>
+    <!-- Add button -->
+    <button id="add-congregation-btn">Add Congregation</button>
+
+    <!-- <button onclick="logout()">Logout</button> -->
+  </div>
+  <!-- Register Form -->
+
+  <div class="form-box" id="register-form">
+    <h2>Register</h2>
+    <p class="error-message" id="register-error"></p>
+    <input type="text" id="register-name" placeholder="Name" required />
+    <input type="email" id="register-email" placeholder="Email Address" required />
+    <input type="password" id="register-password" placeholder="Password" required />
+    <select id="register-role" required>
+      <option value="">--Select Role--</option>
+      <option value="User">User</option>
+      <option value="Admin">Admin</option>
+    </select>
+    <button type="button" onclick="registerUserENC()">Register</button>
+    <p>Already have an account? <a href="#" onclick="showForm('login-form')">Login</a></p>
+  </div>
+  <div class="form-box" id="register-presbytery-form" style="display:none;">
+    <h2>Register Presbytery</h2>
+    <p class="error-message" id="presbytery-error"></p>
+
+    <input type="text" id="presbytery-name" placeholder="Presbytery Name" required />
+    <input type="text" id="presbytery-synod" placeholder="Synod (If Applicable)" />
+
+    <button type="button" onclick="registerPresbytery()">Save Presbytery</button>
+    <button type="button" onclick="hideForm('register-presbytery-form')">Cancel</button>
+  </div>
+
+  <script src="dashboard.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>
