@@ -1,34 +1,114 @@
 <!DOCTYPE html>
 
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Database Login</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" type="image/png" href="img/upfoy-logo.png">
+  <!-- <link rel="stylesheet" href="assets/css/style.css" /> -->
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
+
 <body>
   <div class="container">
 
-```
-<div class="file-section">
-  <h3>Load Database</h3>
-  <input type="file" id="file-input" accept=".foydb" />
-  <button type="button" onclick="exportDatabase()">Export Updated JSON</button>
-  <p id="file-status">No file loaded yet. Using localStorage.</p>
-</div>
+    ```
+    <div class="card mb-3 bg-dark-subtle">
+      <div class="card-body file-section">
+        <h5 class="card-title">Load Database</h5>
 
-<!-- Login Form -->
-<div id="login-form">
-  <h2>Login</h2>
-  <p class="error-message" id="register-error"></p>
-  <input type="email" id="login-email" placeholder="Email Address" required />
-  <input type="password" id="login-password" placeholder="Password" required />
-  <button type="button" onclick="loginENC()">Login</button>
-</div>
-```
+        <div class="row g-2 align-items-center">
+          <div class="col-auto">
+            <input id="file-input" class="form-control" type="file" accept=".foydb" />
+          </div>
+          <div class="col-auto">
+            <button id="btn-load-db" class="btn btn-outline-primary" type="button">Load File</button>
+          </div>
+          <div class="col-12">
+            <p id="file-status" class="small text-muted mt-2">No file loaded yet. Using localStorage.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    ```
+    <!-- File loader card (replace your old .file-section) -->
+    <!-- <div class="card mb-3 bg-dark-subtle">
+<div class="card-body file-section">
+    <h5 class="card-title">Load Database</h5>
+
+    <div class="row g-2 align-items-center">
+      <div class="col-auto">
+        <input class="form-control" type="file" id="file-input" accept=".foydb,application/json" />
+      </div>
+
+      <div class="col-auto">
+        <button id="btn-load" class="btn btn-outline-primary" type="button">Load File</button>
+      </div>
+
+      <div class="col-auto">
+        <button id="btn-export" class="btn btn-primary" type="button">Export Updated JSON</button>
+      </div>
+
+      <div class="col-12">
+        <div id="file-status" class="small text-muted mt-2">No file loaded yet. Using localStorage.</div>
+      </div>
+    </div>
+
+    <div class="mt-3" id="file-preview" style="display:none;">
+      <h6 class="mb-2">Preview (trimmed)</h6>
+      <pre id="file-preview-json" class="border rounded p-2" style="max-height:220px; overflow:auto; background:#f8f9fa"></pre>
+      <div class="mt-2">
+        <button id="btn-apply" class="btn btn-success btn-sm">Apply to Database (overwrite)</button>
+        <button id="btn-merge" class="btn btn-secondary btn-sm">Merge with current DB</button>
+        <button id="btn-clear" class="btn btn-link btn-sm text-danger">Clear loaded file</button>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+    ```
+    <!-- Login Form -->
+    <div class="card mb-3">
+      <div class="card-body" id="login-form">
+        <h5 class="card-title">Login</h5>
+        <div class="row g-2 align-items-center">
+          <p class="error-message" id="register-error"></p>
+          <div class="col-auto">
+            <input class="form-control" type="email" id="login-email" placeholder="Email Address" required />
+          </div>
+          <div class="col-auto">
+            <input class="form-control" type="password" id="login-password" placeholder="Password" required />
+          </div>
+          <div class="col-auto">
+            <button class="btn btn-primary" type="button" onclick="loginENC()">Login</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    ```
 
   </div>
-  <script src="script.js"></script>
+  <!-- JS ORDER: Helpers → Features → App -->
+   
+  <!-- Shared / Base Scripts -->
+  <script src="assets/js/utils.js"></script>
+  <script src="assets/js/db.js"></script>
+  <script src="assets/js/ui.js"></script>
+
+    <!-- Authentication -->
+  <script src="assets/js/auth.js"></script>
+  <script src="assets/js/file.js"></script>
+
+  <!-- Dashboard features -->
+  <script src="assets/js/congregation.js"></script>
+  <script src="assets/js/presbytery.js"></script>
+
+  <!-- Final initializer -->
+  <script src="assets/js/app.js"></script>
 </body>
+
 </html>
